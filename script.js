@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const planList = document.getElementById("plan-list");
   const addSavingsBtn = document.getElementById("add-savings-btn");
   const savingsTotal = document.getElementById("savings-total");
-  const resetBtn = document.querySelector(".reset-btn"); // Updated selector
+  const resetButtons = document.querySelectorAll(".reset-btn"); // Updated selector
 
   
   // Update UI Functions
@@ -129,19 +129,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Reset Button Handler
   
-  if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      if (confirm("Are you sure you want to reset all data?")) {
-        localStorage.clear();
-        updateBudgetUI();
-        updateExpenseList();
-        updateTransactionHistory();
-        updatePlannedExpenses();
-        updateSavings();
-        alert("All data has been reset.");
-      }
-    });
-  }
+  resetButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to reset all data?")) {
+      localStorage.clear();
+      updateBudgetUI();
+      updateExpenseList();
+      updateTransactionHistory();
+      updatePlannedExpenses();
+      updateSavings();
+      alert("All data has been reset.");
+    }
+  });
+});
 
   
   // Init on Load
