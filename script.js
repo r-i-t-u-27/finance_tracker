@@ -9,11 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const planList = document.getElementById("plan-list");
   const addSavingsBtn = document.getElementById("add-savings-btn");
   const savingsTotal = document.getElementById("savings-total");
-  const resetButtons = document.querySelectorAll(".reset-btn"); // Updated selector
 
-  
   // Update UI Functions
-
   function updateBudgetUI() {
     const budget = parseFloat(localStorage.getItem("monthlyBudget")) || 0;
     const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
@@ -63,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event Handlers
-
   setBudgetBtn.addEventListener("click", () => {
     const input = prompt("Enter your monthly budget:");
     const value = parseFloat(input);
@@ -126,49 +122,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  
-  // Reset Button Handler
-  
-  resetButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (confirm("Are you sure you want to reset all data?")) {
-      localStorage.clear();
-      updateBudgetUI();
-      updateExpenseList();
-      updateTransactionHistory();
-      updatePlannedExpenses();
-      updateSavings();
-      alert("All data has been reset.");
+  // Global reset event listener (handles buttons added later, including mobile menu)
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("reset-btn")) {
+      if (confirm("Are you sure you want to reset all data?")) {
+        localStorage.clear();
+        updateBudgetUI();
+        updateExpenseList();
+        updateTransactionHistory();
+        updatePlannedExpenses();
+        updateSavings();
+        alert("All data has been reset.");
+      }
     }
   });
-});
 
-  
+  // Sidebar toggle for mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileSidebar = document.getElementById('mobile-sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    mobileSidebar.classList.toggle('active');
+  });
+
   // Init on Load
-
   updateBudgetUI();
   updateExpenseList();
   updateTransactionHistory();
   updatePlannedExpenses();
   updateSavings();
-  
-  const menuToggle = document.getElementById('menu-toggle');
-const mobileSidebar = document.getElementById('mobile-sidebar');
-
-menuToggle.addEventListener('click', () => {
-  mobileSidebar.classList.toggle('active');
 });
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
