@@ -152,6 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePlannedExpenses();
   updateSavings();
   
+  const menuToggle = document.getElementById('menu-toggle');
+const mobileSidebar = document.getElementById('mobile-sidebar');
+
+menuToggle.addEventListener('click', () => {
+  mobileSidebar.classList.toggle('active');
+});
+
 });
 
 
