@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expense Tracker Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page-wrapper">
+  <div class="container">
+    <nav class="sidebar">
+      <h1 class="logo">MyFinance</h1>
+      <ul>
+        <li class="active">Dashboard</li>
+        <li>Budget</li>
+        <li>Expenses</li>
+        <li>Transaction History</li>
+        <li>Plan Your Expenses</li>
+        <li>Savings</li>
+      </ul>
+
+      <button class="reset-btn">Reset All Data</button>
+
+      <button class="logout-btn">Logout</button>
+    </nav>
+    <main class="main-content">
+      <header>
+        <h2>Welcome back, User!</h2>
+        <p>Track your finances and stay mindful.</p>
+      </header>
+      <section class="cards-grid">
+        <div class="card budget">
+          <h3>Monthly Budget</h3>
+          <p>Set or update your monthly budget</p>
+          <button id="set-budget-btn">Set Budget</button>
+<p id="budget-value">Budget: ₹0</p>
+
+        </div>
+        <div class="card expenses">
+          <h3>Daily Expenses Log</h3>
+          <p>Add and track your daily expenses</p>
+          <button id="add-expense-btn">Add Expense</button>
+<ul id="expense-list"></ul>
+
+        </div>
+        <div class="card transaction-history">
+          <h3>Transaction History</h3>
+          <p>View all your credited and debited amounts</p>
+          <ul id="transaction-history-list"></ul>
+        </div>
+        <div class="card remaining-balance">
+          <h3>Remaining Balance</h3>
+          <p>See how much you have left to spend</p>
+           <p>Remaining: ₹0</p> 
+        </div>
+        <div class="card plan-expenses">
+          <h3>Plan Your Expenses</h3>
+          <p>Set major planned expenses and track deviations</p>
+           <button id="add-plan-btn">Add Planned Expense</button>
+  <ul id="plan-list"></ul>
+        </div>
+        <div class="card savings">
+          <h3>Yearly Savings</h3>
+          <p>View total savings accumulated over the year</p>
+          <button id="add-savings-btn">Add Monthly Saving</button>
+  <p id="savings-total">Total Saved: ₹0</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-top">
+        <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#">Contact</a>
+      <a href="#">Help</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <p class="footer-note">© 2025 MyFinance. All rights reserved.</p>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-inner">
+    <p class="made-with-love">Made with <span class="heart">❤️</span> by Ritu Kumari</p>
+    </div>  
+    </div>
+</div>
+</footer>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
